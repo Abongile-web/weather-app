@@ -1,25 +1,31 @@
-//Run a function as soon as window loads
-window.addEventListener('load', ()=> {
-    //declare longitude and latitude to get current location
-    let long;
-    let lat;
 
+//get user location 
+function search() {
+    let city = document.querySelector('#location').value; 
 
-    if (navigator.geolocation) { //if user allows google to use their current location
-        navigator.geolocation.getCurrentPosition(position => {
-            long = position.coords.longitude;
-            lat = position.coords.latitude;
-
-            const api = `api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${long}&appid=2d34b7d14e86d002792327c07e7f2655`; 
+    //instert user location in api
+    const api = `https://api.weatherapi.com/v1/current.json?&key=703d940f7ef44bc19b972820211803&q=${city}&aqi=yes`;
 
             fetch(api)
-                .then(Response => {
-                    return Response.json();
+                .then(response => {
+                    return response.json(); //converst api to json to use with js
                 })
                 .then(data => {
                     console.log(data);
-                })
-        })
-    }
+                    //get all information you need 
+                    const temp = data.current.temp_c;
+                    const condition = data.current.condition.text;
+                    const time = data.location.localtime;
+                    const icon = data.current.condition.icon;
+                    const region = data.location.region;
 
-})
+                    //inster information into app
+                    document.querySelector('#temperature').textContent = temp;
+                    document.querySelector('#description').textContent = condition;
+                    document.querySelector('#date').textContent = time;
+                    document.querySelector('h2#location').textContent = region;
+                    document.querySelector('.icon img').src = icon;
+                    
+                })
+}
+

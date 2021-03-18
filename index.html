@@ -11,17 +11,24 @@
     
     <div class="today">
         <div class="location">
-            <h1>Location</h1>
+            <input type="text" id="location" placeholder="Enter a city name" value="">
+            <button onclick="search()">Search</button>
         </div>
 
         <div class="icon">
-            <p>Icon placeholder</p>
+            <img src="http://cdn.weatherapi.com/weather/64x64/day/116.png" id="icon"/>
 
-            <p>Icon description</p>
+            <p id="description">weather condition</p>
         </div>
 
         <div class="temperature">
-            <h1>30<span>C</span></h1>
+            <h1 id="temperature">30</h1>
+            <span>C</span>
+        </div>
+
+        <div class="date">
+            <h2 id="location">Region</h2>
+            <h2 id="date">Date and Time</h2>
         </div>
     </div>
 

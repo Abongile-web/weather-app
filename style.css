@@ -6,7 +6,10 @@
 }
 
 body {
-  background-image: url("./Assets/skyblue_sky.jpg");
+  background-image: url("./Assets/dark forest.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   color: white;
 }
 
@@ -26,5 +29,39 @@ body {
           justify-content: space-between;
   height: 80vh;
   margin-top: 10vh;
+  text-align: center;
+}
+
+.today .location {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.today .location input {
+  font-size: 20px;
+  text-align: center;
+}
+
+.today .location button {
+  width: 40%;
+  margin-top: 10px;
+  background-color: red;
+  color: white;
+  padding: 5px;
+  border: none;
+}
+
+.today .temperature {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 /*# sourceMappingURL=style.css.map */
