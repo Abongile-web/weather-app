@@ -4,7 +4,7 @@ function search() {
     let city = document.querySelector('#location').value; 
 
     //instert user location in api
-    const api = `https://api.weatherapi.com/v1/current.json?&key=703d940f7ef44bc19b972820211803&q=${city}&aqi=yes`;
+    const api = `https://api.weatherapi.com/v1/forecast.json?key=703d940f7ef44bc19b972820211803&q=${city}&days=10&aqi=no&alerts=no`;
 
             fetch(api)
                 .then(response => {

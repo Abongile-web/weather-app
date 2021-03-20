@@ -40,7 +40,10 @@ body {
     }
   }
 
-  .temperature {
-    display: flex;
+  .icon {
+    .temperature {
+      display: flex;
+      justify-content: center;
+    }
   }
 }

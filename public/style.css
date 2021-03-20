@@ -60,9 +60,12 @@ body {
   border: none;
 }
 
-.today .temperature {
+.today .icon .temperature {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 /*# sourceMappingURL=style.css.map */
