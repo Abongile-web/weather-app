@@ -6,12 +6,12 @@
 }
 
 body {
-  background-image: url("./Assets/dark forest.jpg");
+  background-image: url("./Assets/space_background.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   color: white;
-  height: 100vh;
+  height: 90vh;
 }
 
 .today {
@@ -25,10 +25,9 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  height: 80vh;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  height: 60vh;
   margin-top: 10vh;
   text-align: center;
 }
@@ -67,5 +66,59 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.forcast {
+  background-color: white;
+  color: #323232;
+  height: 30vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.forcast .date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px;
+  font-size: 10px;
+}
+
+.forcast .days {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.forcast .days .day {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.forcast .days .temperature {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 10px;
 }
 /*# sourceMappingURL=style.css.map */
