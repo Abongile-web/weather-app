@@ -121,4 +121,10 @@ body {
   display: flex;
   font-size: 10px;
 }
+
+#error {
+  display: none;
+  color: white;
+  font-size: 12px;
+}
 /*# sourceMappingURL=style.css.map */
