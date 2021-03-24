@@ -6,12 +6,30 @@ function search() {
     //instert user location in api
     const api = `https://api.weatherapi.com/v1/forecast.json?key=703d940f7ef44bc19b972820211803&q=${city}&days=10&aqi=no&alerts=no`;
 
-    
+    //error handling if city is not found
+    function handleErrors(response) {
+      if (!response.ok){
+        throw Error(response.statusText);
+      }
+      return response;
+    }
 
             fetch(api)
+                .then(handleErrors)
+
                 .then(response => {
-                    return response.json(); //converst api to json to use with js
+                    return response.json(); //converts api to json to use with js
+                }).catch(function(error) {
+                  console.log('city not found', error);
+
+                  let errorMessage = document.querySelector('#error').style.display.value;
+
+                  if (errorMessage == undefined) {
+                    errorMessage = document.querySelector('#error').style.display = 'block';
+                  }
+                  console.log(errorMessage);
                 })
+
                 .then(data => {
                     console.log(data);
                     //get all information you need for today
@@ -21,7 +39,10 @@ function search() {
                     const icon = data.current.condition.icon;
                     const region = data.location.region;
 
-                    //inster information into app
+                    //remove error message
+                    document.querySelector('#error').style.display = 'none';
+
+                    //insert information into app
                     document.querySelector('#temperature').textContent = temp;
                     document.querySelector('#description').textContent = condition;
                     document.querySelector('#date').textContent = time;
@@ -111,5 +132,7 @@ function search() {
                     document.querySelector('#icon2 img').src = icon2;
                     document.querySelector('#icon3 img').src = icon3;
                 })
+
+              
 }
 
