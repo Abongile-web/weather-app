@@ -51,7 +51,8 @@ body {
 .forcast {
   background-color: white;
   color: rgb(50, 50, 50);
-  height: 30vh;
+  height: auto;
+  min-height: 30vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -83,3 +84,5 @@ body {
   color: white;
   font-size: 12px;
 }
+
+// @media only screen and (max-width: )

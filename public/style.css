@@ -71,7 +71,8 @@ body {
 .forcast {
   background-color: white;
   color: #323232;
-  height: 30vh;
+  height: auto;
+  min-height: 30vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
